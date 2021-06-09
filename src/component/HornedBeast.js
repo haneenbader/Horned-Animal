@@ -4,7 +4,10 @@ export class HornedBeast extends Component {
     render() {
         return (
             <div>
-                {this.props.hornedInfo}
+                <h2> {this.props.title} </h2>
+                <img src={this.props.image_url} alt='UniWhal'onClick={this.increaseVotes}/>
+                <p> {this.props.description} </p>
+               
             </div>
         )
     }
