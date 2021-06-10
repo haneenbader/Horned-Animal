@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import HornedBeast from './HornedBeast.js'
-import Data from '../assest/Data.json'
+
+import HornedForm from './HornedForm'
 
 
 
@@ -10,12 +11,17 @@ export class Main extends Component {
         super(props);
         // change condition in hornedbeast  
         this.state = {
-            Pictures: Data
+            horns: this.props.data
         };
+
+    }
+    filterHornes = (e) => {
+        this.setState({ horns: e })
+
     }
     render() {
         return (
-            this.state.Pictures.map(hornedInfo => {
+            this.state.horns.map(hornedInfo => {
                 return (
                     <div>
                         <HornedBeast
@@ -23,11 +29,11 @@ export class Main extends Component {
                             image_url={hornedInfo.image_url}
                             description={hornedInfo.description}
                         />
-                        
+                        <HornedForm newState={this.filterHornes} horns={this.props.data} />
                     </div>
                 )
             })
-        
+
         )
     }
 }
