@@ -24,13 +24,14 @@ export class Main extends Component {
             this.state.horns.map(hornedInfo => {
                 return (
                     <div>
-                        <HornedBeast
+                         <HornedBeast
                             title={hornedInfo.title}
                             image_url={hornedInfo.image_url}
                             description={hornedInfo.description}
                         />
                         <HornedForm newState={this.filterHornes} horns={this.props.data} />
                     </div>
+
                 )
             })
 
